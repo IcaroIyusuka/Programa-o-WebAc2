@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 6</title>
+
+    <script>
+    
+        function calcular() {
+         
+          var custoFabrica = parseFloat(document.getElementById("custoFabrica").value);
+          var percDistribuidor = parseFloat(document.getElementById("percDistribuidor").value) / 100;
+          var percImpostos = parseFloat(document.getElementById("percImpostos").value) / 100; 
+    
+          
+          var custoFinal = custoFabrica + (custoFabrica * percDistribuidor) + (custoFabrica * percImpostos);
+    
+          
+          document.getElementById("valorFinal").value = custoFinal;
+        }
+      </script>
+
+</head>
+<body>
+    <h1>Calculadora de custo final de um carro novo</h1>
+  <p>Insira os valores nos campos abaixo e clique no botão calcular.</p>
+  <form>
+    <label for="custoFabrica">Custo de fábrica:</label>
+    <input type="number" id="custoFabrica" name="custoFabrica"><br>
+    <label for="percDistribuidor">% distribuidor:</label>
+    <input type="number" id="percDistribuidor" name="percDistribuidor"><br>
+    <label for="percImpostos">% impostos:</label>
+    <input type="number" id="percImpostos" name="percImpostos"><br>
+    <button type="button" onclick="calcular()">Calcular</button><br>
+    <label for="valorFinal">Valor final:</label>
+    <input type="number" id="valorFinal" name="valorFinal" readonly><br>
+  </form>
+</body>
+</html>
